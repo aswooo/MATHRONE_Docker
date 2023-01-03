@@ -38,7 +38,7 @@ jobs:
       
     - name: Code deploy
       run: >
-        aws deploy creewate-deployment
+        aws deploy create-deployment
         --application-name $CODE_DEPLOY_APP_NAME
         --deployment-config-name CodeDeployDefault.OneAtTime
         --deployment-group-name $DEPLOYMENT_GROUP_NAME
