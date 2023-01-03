@@ -5,8 +5,8 @@ on:
     branches: [ "master" ]
 
 env:
-  AWS_REGION: mathrone
-  PROJECT_NAME: MY_ECR_REPOSITORY
+  AWS_REGION: ap-northeast-2
+  PROJECT_NAME: mathrone
   BUCKET_NAME: mathrone-deploy  
   CODE_DEPLOY_APP_NAME: mathrone 
   DEPLOYMENT_GROUP_NAME: mathrone-deploy
