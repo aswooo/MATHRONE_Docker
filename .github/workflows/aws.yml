@@ -31,7 +31,7 @@ jobs:
         aws-region: ${{ env.AWS_REGION }}
 
     - name: Delete all files on S3
-      run: aws s3 rm s3://$BUCKET_NAME/ -recursive -- include "*"
+      run: aws s3 rm s3://$BUCKET_NAME/ --recursive --include "*"
 
     - name: Upload zip files on S3
       run: aws s3 cp --region ap-northeast-2 ./$GITHUB_SHA.zip s3://$BUCKET_NAME/$PROJECT_NAME/$GITHUB_SHA.zip
