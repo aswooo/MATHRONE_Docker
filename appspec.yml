@@ -11,5 +11,5 @@ permissons:
     group: ec2-user
 hooks:
   AfterInstall:
-    - location: scripts/start.sh
+    - location: deploy.sh
       runas: ec2-user
