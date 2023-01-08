@@ -5,6 +5,7 @@ BACK_REPO=/home/ec2-user/mathrone/MATHRONE_Backend_Submodule
 cd REPOSITORY
 echo ">실행"
 docker kill $(docker -ps -q)
+pwd
 git submodule update --init --recursive
 cd MATHRONE_Frontend_Submodule
 git checkout "develop"
