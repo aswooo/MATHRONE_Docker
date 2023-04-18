@@ -35,6 +35,7 @@ jobs:
 
     - name: Build with Gradle
       run: |
+        cd ./MATHRONE_Backend_Submodule
         ./gradlew build
 
 
