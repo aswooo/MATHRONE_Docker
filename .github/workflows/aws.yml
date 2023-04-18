@@ -28,15 +28,17 @@ jobs:
         cd /home/runner/work/MATHRONE_Docker/MATHRONE_Docker/MATHRONE_Backend_Submodule/src/main/resources/keys
         echo "${{ secrets.BACK_CREDENTIALS }}" >> application_default_credentials.json
         cd /home/runner/work/MATHRONE_Docker/MATHRONE_Docker/MATHRONE_Backend_Submodule/src/main/resources
-        echo "${{ secrets.BACK_PROPS }}" >> application.properties
+        echo "${{ secrets.BACK_PROPS }}" > application.properties
 
     - name: Grant execute permission for gradlew
       run: |
-        pwd
+        cd ./MATHRONE_Backend_Submodule
         chmod +x gradlew
 
     - name: Build with Gradle
-      run: ./gradlew build
+      run: |
+        cd ./MATHRONE_Backend_Submodule
+        ./gradlew build
 
 
     - name: Make Zip File
