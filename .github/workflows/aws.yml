@@ -19,14 +19,12 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
       with:
-          submodules: true
+        submodules: true
       
     - name: create env file
       run: |
         touch .env
         echo "${{ secrets.ENV_VARS }}" > .env
-      # cd /home/runner/work/MATHRONE_Docker/MATHRONE_Docker/MATHRONE_Backend_Submodule/src/main/resources/keys
-      # echo "${{ secrets.BACK_CREDENTIALS }}" > application_default_credentials.json
         cd /home/runner/work/MATHRONE_Docker/MATHRONE_Docker/MATHRONE_Backend_Submodule/src/main/resources
         echo "${{ secrets.BACK_PROPS }}" > application.properties
 
@@ -37,7 +35,6 @@ jobs:
 
     - name: Build with Gradle
       run: |
-        cd ./MATHRONE_Backend_Submodule
         ./gradlew build
 
 
