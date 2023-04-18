@@ -26,8 +26,9 @@ jobs:
         ls
         touch .env
         echo "${{ secrets.ENV_VARS }}" > .env
-        cd ./MATHRONE_Backend_Submodule/src/main/resources/keys
+        cd ./MATHRONE_Backend_Submodule
         pwd
+        ls
         echo "${{ secrets.BACK_CREDENTIALS }}" >> application_default_credentials.json
         cd home/runner/work/MATHRONE_Docker/MATHRONE_Docker/MATHRONE_Backend_Submodule/src/main/resources
         echo "${{ secrets.BACK_PROPS }}" >> application.properties
