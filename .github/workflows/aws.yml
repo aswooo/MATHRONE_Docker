@@ -31,7 +31,7 @@ jobs:
         echo "${{ secrets.BACK_CREDENTIALS }}" >> application_default_credentials.json
 
     - name: Make application.properties
-        run: |
+        run:
           cd ./MATHRONE_Backend_Submodule/src/main/resources
           echo "${{ secrets.APPLICATION }}" > ./application.properties
 
