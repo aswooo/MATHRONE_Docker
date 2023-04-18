@@ -3,7 +3,7 @@ FRONT_REPO=/home/ec2-user/mathrone/MATHRONE_Frontend_Submodule
 BACK_REPO=/home/ec2-user/mathrone/MATHRONE_Backend_Submodule
 
 cd /home/ec2-user/app
-docker-compose up --build
+sudo docker-compose up --build
 
 # cd $REPOSITORY
 # echo ">실행"
