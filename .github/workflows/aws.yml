@@ -21,12 +21,19 @@ jobs:
       
     - name: create env file
       run: |
+        echo pwd
+        echo { secrets.ENV_VARS }
         touch .env
-        echo "${{ secrets.ENV_VARS }}" >> .env
+        echo "${{ secrets.ENV_VARS }}" > .env
         touch MATHRONE_Backend_Submodule/src/main/resources/keys/application_default_credentials.json
         echo "${{ secrets.BACK_CREDENTIALS }}" >> application_default_credentials.json
         touch MATHRONE_Backend_Submodule/src/main/resources/application.properties
         echo "${{ secrets.BACK_CREDENTIALS }}" >> application_default_credentials.json
+
+    - name: Make application.properties
+        run: |
+          cd ./MATHRONE_Backend_Submodule/src/main/resources
+          echo "${{ secrets.APPLICATION }}" > ./application.properties
 
     - name: Make Zip File
       run: zip -qq -r ./$GITHUB_SHA.zip .
