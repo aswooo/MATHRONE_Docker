@@ -3,7 +3,7 @@ os: linux
 
 files:
   - source: /
-    destination: /home/ec2-user/mathrone # s3의 zip 파일 저장 위치
+    destination: /home/ec2-user/app # s3의 zip 파일 저장 위치
     overwrite: yes
 
 permissons:
