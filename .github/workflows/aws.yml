@@ -21,13 +21,13 @@ jobs:
       
     - name: create env file
       run: |
-        echo pwd
+        pwd
         echo { secrets.ENV_VARS }
         touch .env
         echo "${{ secrets.ENV_VARS }}" >> .env
-        touch MATHRONE_Backend_Submodule/src/main/resources/keys/application_default_credentials.json
+        cd ./MATHRONE_Backend_Submodule/src/main/resources/keys
         echo "${{ secrets.BACK_CREDENTIALS }}" >> application_default_credentials.json
-        touch MATHRONE_Backend_Submodule/src/main/resources/application.properties
+        touch ./MATHRONE_Backend_Submodule/src/main/resources/application.properties
         echo "${{ secrets.BACK_CREDENTIALS }}" >> application_default_credentials.json
 
     - name: Make Zip File
