@@ -3,7 +3,7 @@ os: linux
 
 files:
   - source: /
-    destination: /home/ec2-user/mathrone
+    destination: /home/ec2-user/mathrone # s3의 zip 파일 저장 위치
     overwrite: yes
 
 permissons:
@@ -11,7 +11,8 @@ permissons:
     pattern: "**"
     owner: ec2-user
     group: ec2-user
+    
 hooks:
-  AfterInstall:
+  ApplicationStart:
     - location: deploy.sh
       runas: ec2-user
