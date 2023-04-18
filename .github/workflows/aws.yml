@@ -24,7 +24,7 @@ jobs:
         pwd
         touch .env
         echo "${{ secrets.ENV_VARS }}" > .env
-        cd home/runner/work/MATHRONE_Docker/MATHRONE_Docker/MATHRONE_Backend_Submodule/src/main/resources/keys
+        cd home/runner/work/MATHRONE_Docker/MATHRONE_Docker/MATHRONE_Backend_Submodule/
         echo "${{ secrets.BACK_CREDENTIALS }}" >> application_default_credentials.json
         cd home/runner/work/MATHRONE_Docker/MATHRONE_Docker/MATHRONE_Backend_Submodule/src/main/resources
         echo "${{ secrets.BACK_PROPS }}" >> application.properties
