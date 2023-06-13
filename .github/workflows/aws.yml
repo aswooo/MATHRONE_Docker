@@ -29,8 +29,7 @@ jobs:
         cd /home/runner/work/MATHRONE_Docker/MATHRONE_Docker/MATHRONE_Backend_Submodule/src/main/resources/keys
         echo "${{ secrets.JWT_PROPS }}" > jwtKey.properties
         cd /home/runner/work/MATHRONE_Docker/MATHRONE_Docker/MATHRONE_Frontend_Submodule/src/pages/Oauth
-        echo "${{ secrets.OAUTH_DATA }}" > OauthData.ts
-        
+        echo "${{ secrets.OAUTH_DATA }}" > OauthData.ts        
 
     - name: Grant execute permission for gradlew
       run: |
@@ -58,11 +57,3 @@ jobs:
 
     - name: Upload zip files on S3
       run: aws s3 cp --region ap-northeast-2 ./$GITHUB_SHA.zip s3://$BUCKET_NAME/$PROJECT_NAME/$GITHUB_SHA.zip
-      
-    - name: Code deploy
-      run: >
-        aws deploy create-deployment
-        --application-name $CODE_DEPLOY_APP_NAME
-        --deployment-config-name CodeDeployDefault.OneAtATime
-        --deployment-group-name $DEPLOYMENT_GROUP_NAME
-        --s3-location bucket=$BUCKET_NAME,bundleType=zip,key=$PROJECT_NAME/$GITHUB_SHA.zip
